@@ -1,0 +1,6 @@
+---
+web_package: httpd
+web_service: httpd
+
+
+# vars file for httpd

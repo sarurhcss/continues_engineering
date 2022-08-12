@@ -1,0 +1,32 @@
+---
+ - name: Installing HTTPD package
+   yum:
+     name: "{{web_package}}"
+     state: installed
+
+ - name: Copying the template
+   template:
+     src: httpd.j2
+     dest: /var/www/html/index.html
+
+ - name: Starting the {{web_service}}  service
+   service:
+     name: "{{web_service}}"
+     state: started
+     enabled: yes 
+
+ - name: open the port
+   firewalld:
+     service: http
+     state: enabled
+     permanent: yes
+     immediate: yes
+
+
+
+
+
+
+
+
+# tasks file for httpd

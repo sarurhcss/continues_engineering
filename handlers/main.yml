@@ -1,0 +1,6 @@
+---
+ - name: restart_job
+   service:
+     name: httpd
+     state: restarted
+# handlers file for httpd
